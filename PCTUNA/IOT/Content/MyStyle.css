@@ -1,0 +1,174 @@
+﻿#container {
+    margin: auto;
+    text-align:center;
+    position: relative;
+    background-color:black;
+}        
+.tableDefaultBoard{
+    table-layout:fixed;
+    width:100%;
+    height:calc(100vh - 50px);
+    color:white;
+}
+.tableDefaultBoard td{
+    position:relative;
+    font-size:12.5vmin;
+    font-weight:bold;
+    padding:2vmin;
+}
+.tableDefaultBoard td span{
+    margin-top:2vmin;
+}
+.tableDefaultBoard td:nth-child(1){
+    width:12%;
+}
+.tableDefaultBoard td:nth-child(2){
+    text-align:left;
+    width:38%;
+    padding-left:10%;
+}
+.tableDefaultBoard td:nth-child(3){
+    text-align:right;
+    width:38%;
+    padding-right:10%;
+    color:yellow;
+}
+.tableDefaultBoard td:nth-child(4){
+    width:12%;
+    text-align:center;
+}
+.fadeInLabel{
+    animation-name: fadeInAnimation;
+    animation-duration: 2s;
+}
+@keyframes fadeInAnimation {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+.drawBorder{
+	border:0;
+    background-color:black;
+    position: relative;
+}
+.drawBorder::before,.drawBorder:after{
+	box-sizing: border-box;
+	position: absolute;
+	content: '';
+	border: 1vmin solid transparent;
+    width: 0;
+    height: 0;
+}
+.drawBorder::before{
+	top: 0;
+  	left: 0;
+  	animation: drawborderAnimetionTopAndRight 10s infinite, drawborderColorAnimetionTopAndRight 10s infinite;
+}
+.drawBorder::after{
+	bottom: 0;
+  	right: 0;
+  	animation: drawborderAnimetionBottomAndLeft 10s infinite, drawborderColorAnimetionBottomAndLeft 10s infinite;
+}
+@keyframes drawborderAnimetionTopAndRight {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    12.5% {
+        width: 100%;
+        height: 0;    
+    }
+    25% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes drawborderAnimetionBottomAndLeft {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    25% {
+        width: 0;
+        height: 0;    
+    }
+    37.5% {
+        width: 100%;
+        height: 0;
+    }
+    50%{
+  	    width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes drawborderColorAnimetionTopAndRight {
+    0% {
+        border-top-color: lightblue;
+        border-right-color: lightblue;
+    }
+    25.5% {
+  	    border-top-color: palevioletred;
+        border-right-color: palevioletred;
+    }
+    80%{
+  	    border-top-color: lightgreen;
+        border-right-color: lightgreen;
+    }
+    85% {
+        border-top-color: transparent;
+        border-right-color: transparent;
+    }
+    90% {
+        border-top-color: lightgreen;
+        border-right-color: lightgreen;
+    }
+    95%{
+  	    border-top-color: transparent;
+        border-right-color: transparent;
+    }
+    100% {
+        border-top-color: transparent;
+        border-right-color: transparent;
+    }
+}
+@keyframes drawborderColorAnimetionBottomAndLeft {
+    0% {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    25% {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    25.5% {
+  	    border-bottom-color: palevioletred;
+        border-left-color: palevioletred;
+    }  
+    80% {
+  	    border-bottom-color: lightgreen;
+        border-left-color: lightgreen;
+    }
+    85% {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    90% {
+        border-bottom-color: lightgreen;
+        border-left-color: lightgreen;
+    }
+    95%{
+  	    border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100% {
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+}
